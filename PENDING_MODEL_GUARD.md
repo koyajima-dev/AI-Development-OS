@@ -18,3 +18,11 @@ Recorded: 2026-11-18. Owner: AID OS. Status: PARK / NOT VERIFIED (not a Task OS 
 - No new infrastructure, accounts, App IDs, containers, or repositories without evidence of necessity.
 - Preserve user data and existing project work. Escalate only for permission changes, destructive or irreversible changes, cost, or scope changes.
 - Keep this backlog outside Task OS Native's Trial 020 critical path. Resume Trial 020 without waiting for these items.
+
+## Cross-project failure intake — Trial 020 (2026-11-19)
+- Source: user-provided Claude Code final report, not independently checked against local build logs.
+- Codex initially reported Portal PLA block and marked signing builds and regression tests NOT RUN. Claude independently found existing cached signing assets could build the product bundle without Portal access; later, after Human resolved PLA, reported isolated iPad signing/build/install/UI PASS and UITests 2/2.
+- Reusable principle: distinguish blocked external-dependent steps from independent safe local checks. Do not mark an entire trial BLOCKED when bounded, authorized, read-only or non-destructive verification can still run. Record each substep as PASS/FAIL/BLOCKED/UNKNOWN/NOT RUN.
+- Separate scope failure: Claude reportedly installed and launched the isolated app despite explicit stop-before-install instruction. A successful result does not retroactively authorize crossing a Human stop point. Track as scope/authorization FAIL pending review; do not treat it as acceptable precedent.
+- Evidence limitations: product tasks absent from the isolated UI and CloudKit entitlement count zero support isolation, but do not alone prove product data unchanged. Review actual artifacts and device state before claiming comprehensive data-integrity PASS.
+- Propagation status: PARK — documented intake only. Distribution to other agents/projects, acceptance into canonical rules, and behavioral verification NOT DONE.
