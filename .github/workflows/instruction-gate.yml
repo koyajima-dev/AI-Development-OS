@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Gate unit tests
-        run: python -m unittest discover -s tests -p 'test_instruction_gate.py' -v
+        run: python -m unittest discover -s tests -p 'test_*instruction.py' -v
       - name: Validate every tracked implementation instruction
         shell: bash
         run: |
