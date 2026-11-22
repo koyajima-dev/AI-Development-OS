@@ -25,6 +25,7 @@ def validate(s):
     missing = [k for k,p in HEADINGS.items() if not re.search(r"(?im)^#{1,4}\s*.*(?:"+p+")",s)]
     missing += [k for k,p in FIELDS.items() if not re.search(p,s,re.I)]
     if re.search(r"前の指示書に追記|末尾に追加|差分指示",s): missing.append("full_document_only")
+    if re.search(r"(?im)^環境選択可否\s*[:：]\s*未確認",s) and not re.search(r"(?im)^利用不可時\s*[:：].*停止",s): missing.append("unknown_environment_must_stop")
     return missing
 
 if __name__ == "__main__":
