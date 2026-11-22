@@ -14,3 +14,15 @@ MANDATORY OUTPUT GATE for every Codex/Claude Code implementation instruction (in
 - A previously chosen model or a separate paragraph outside the instruction does NOT satisfy this gate. Never omit the section merely because the work is a continuation.
 - This is an agent instruction, NOT a technical guarantee for unrelated ChatGPT conversations. Verify actual outputs separately.
 <!-- AID-OS:MODEL-OUTPUT-BLOCKER:END -->
+
+## Mandatory repository-local instruction release
+
+When creating a Codex/Claude Code implementation instruction **as a file in this repository**, write a draft first, then run:
+
+```sh
+python3 scripts/verified_instruction.py /path/to/draft.md /path/to/new-released.md
+```
+
+Only the resulting released file may be described as an approved instruction artifact. A failed gate must not be bypassed by copying the draft to the output path. Do not replace an existing release file. Official model and effort claims must be independently verified against the actual provider documentation and account environment; the gate's self-declared confirmation fields are not evidence of truth.
+
+This rule is scoped to agents that load this repository's AGENTS.md. It does not technically block ordinary ChatGPT messages or other repositories. Do not report universal enforcement without separately verified platform controls.
